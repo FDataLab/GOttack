@@ -194,15 +194,15 @@ In total, the 30 distinct graphlets generate \(\mathbf{73}\) <strong>distinct or
 <p><strong>Graph Orbit Vector.</strong> A numerical representation of a node’s participation across the 73 orbits in a graph.  Consequently, \(GOV_v\) a node v is an n=73-dimensional vector, where each dimension corresponds to the count of a specific orbit touched by node v. This dimensionality reflects the full set of topological positions a node can occupy across all 5-node graphlets, making it a comprehensive description of a node’s structural embedding. </p> 
 
 
-<div style="display: flex; justify-content: center; gap: 20px; align-items: flex-start;">
+<div style="display: flex; justify-content: center; gap: 10px; align-items: flex-start;">
     
-    <figure style="text-align: center; width: 20%;">
-        <img src="figs/motif.png" alt="Motif" style="width: 20%;">
+    <figure style="text-align: center; width: 10%;">
+        <img src="figs/motif.png" alt="Motif" style="width: 10%;">
         <figcaption>Figure 1. A toy graph where shared node colors imply similar orbit counts. Nodes u, z, and w have 15 and 18 orbits, respectively.</figcaption>
     </figure>
 
-    <figure style="text-align: center; width: 15%;">
-        <img src="figs/glet.png" alt="Glet" style="width: 20%;">
+    <figure style="text-align: center; width: 10%;">
+        <img src="figs/glet.png" alt="Glet" style="width: 10%;">
         <figcaption>Figure 2. Graphlets where orbits 15 and 18 are defined.</figcaption>
     </figure>
 
@@ -261,6 +261,27 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
     <p>We apply orbit discovery to the Bitcoin, Litecoin, and Ethereum blockchains. As ground truth address labels are predominantly available for the Bitcoin network, we primarily focus on the Bitcoin transaction network and detail our findings in this section. Results for Ethereum and Litecoin are also discussed in the appendices.</p>
 
     
+<div style="display: flex; justify-content: center; gap: 10px; align-items: flex-start;">
+    
+    <figure style="text-align: center; width: 15%;">
+        <img src="figs/GraphSAGE.png" alt="GraphSAGE" style="width: 15%;">
+        <figcaption> GraphSAGE Model</figcaption>
+    </figure>
+
+    <figure style="text-align: center; width: 15%;">
+        <img src="figs/GCN.png" alt="GCN" style="width: 15%;">
+        <figcaption>GCN Model</figcaption>
+    </figure>
+	
+	    <figure style="text-align: center; width: 15%;">
+        <img src="figs/GIN.png" alt="GIN" style="width: 15%;">
+        <figcaption>GIN Model</figcaption>
+    </figure>
+
+</div>	
+	
+	
+	
     <h2>Conclusion</h2>
 	 <p>We have identified a key equivalence group for graph nodes based on their topological positions within the graph and demonstrated that gradient-based attack models frequently target this group in their attacks. Our approach, GOttack, introduces a seminal topological strategy in adversarial graph machine learning. By uncovering this previously unexplored vulnerability tied to graph topology, our work highlights the susceptibility of graph neural networks to topology-based attacks and paves the way for developing efficient attack models. GOttack not only enhances misclassification rates but does so in a scalable manner.  For future work, we aim to study topological defenses against attack models.</p>
     <br>
