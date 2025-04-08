@@ -193,10 +193,6 @@ In total, the 30 distinct graphlets generate \(\mathbf{73}\) <strong>distinct or
 
 <p><strong>Graph Orbit Vector.</strong> A numerical representation of a node’s participation across the 73 orbits in a graph.  Consequently, \(GOV_v\) a node v is an n=73-dimensional vector, where each dimension corresponds to the count of a specific orbit touched by node v. This dimensionality reflects the full set of topological positions a node can occupy across all 5-node graphlets, making it a comprehensive description of a node’s structural embedding. </p> 
 
-<figure>
-    <img src="figs/motif.png" alt="Motif" style="width: 30%;">
-    <figcaption> Figure 1. A toy graph where shared node colors imply similar orbit counts. Nodes u, z, and w have 15 and 18 orbits, respectively.</figcaption>
-</figure>
 
 <div style="display: flex; justify-content: center; gap: 40px; align-items: flex-start;">
     
@@ -233,10 +229,6 @@ In total, the 30 distinct graphlets generate \(\mathbf{73}\) <strong>distinct or
 The Periphery Orbits observation forms the backbone of our attack strategy. We identify nodes of periphery orbits (i.e., \(15\) and \(18\)) and affect the adjacency matrix (i.e., add or remove edges to these nodes) accordingly to confuse a GNN into misclassifying a target.
 </p>
 
-<figure>
-    <img src="figs/glet.png" alt="Glet" style="width: 30%;">
-    <figcaption> Figure 2. Graphlets where orbits 15 and 18 are defined.</figcaption>
-</figure>
 
 <p>
 Consider the target node \( v \) in Figure 2. Our hypothesis posits that creating an edge from \( v \) (or any other node) to either of the orbit \(15\) or \(18\) nodes \( u \), \( z \), or \( w \) will yield the highest misclassification error in GCN. The selection among periphery nodes uses a gradient-based method, as we detail below in the surrogate loss section.
