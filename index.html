@@ -249,21 +249,22 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
   <p><strong>Hardware.</strong> The experiments were conducted using Python (Version 3.8.19) and PyTorch  Version 3.10.0. The computational environment was a Linux cluster equipped with an AMD Ryzen Threadripper 3960X 24-core processor, 2520GB RAM and NVIDIA RTX A6000 with 49GB RAM GPUs</p>
 
         <h2>Experimental Results</h2>
-		
+		<br>
 		<p> Table 1 shows the misclassification rate achieved with a single edge perturbation (addition or deletion). GOttack yields the highest misclassification rates in 7 out of 15 attack settings and ranks second in 5 other settings. SGAttack yields  4 best attacks, while PRBCD and Nettack each perform best in  2 attack settings. PRBCD, a widely used method adopted by PyTorch, yields surprisingly low rates in two datasets for GSAGE and GIN. GOttack yields the highest overall rate of 52.08, whereas the second best Nettack yields 47.02. </p>
-  
+  <br>
 	<figure>
     <img src="figs/attack_res.png" alt="Motif" style="width: 70%;">
     <figcaption> Table 1. Misclassification rate (in %) (↑) of target nodes in five datasets where three backbone GNNs are attacked in node classification with budget ∆ = 1.
 </figcaption>
 </figure>
 	
+	<br>
 		<figure>
     <img src="figs/all_result.png" alt="Motif" style="width: 70%;">
     <figcaption> Figure 3. Budgeted (∆ = 1 to 5) attack results on the Citeseer dataset.</figcaption>
 </figure>
 	
-	
+<br>
 <p> In Figure 3, we gradually increase the attack budget and represent the corresponding misclassification rates on the Citeseer dataset. We observe that for GraphSAGE, GOttack yields better misclassification results, reaching a maximum misclassification score of 97% with 5 perturbations. Similarly, for the GCN and GIN models, the proposed approach attains misclassification scores of 77% and 76%, respectively, outperforming the SOTA models.	</p>
 	
 	
@@ -271,16 +272,16 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
     <img src="figs/dif_res.png" alt="Motif" style="width: 70%;">
     <figcaption> Table 2. Misclassification rate (in %) (↑) of target nodes in different datasets against four defense models are attacked in node classification.</figcaption>
 </figure>
-
+<br>
 <p> Table 2 shows the misclassification rates of the top-3 attack models on defense models with a single edge perturbation. GOttack yields the highest misclassification rates in 7 out of 16 attack settings and ranks second in 7 other settings, while SGA achieves the best performance in 7 attack settings. GOttack achieves the highest overall rate of 33.07, whereas SGA has a rate of 32.5.  </p>
 	
-	
+<br>	
 	<figure>
     <img src="figs/GNNExplainer.png" alt="Motif" style="width: 60%;">
     <figcaption> Figure 4. The computation graph for the targeted node 1978 from the CORA datasets, as identified by GNNExplainer. The edge (1978, 387) is added during the successful attack. Edge importances change considerably after the attack and negative class gains importance due to the newly added nodes.
 </figcaption>
 </figure>
-
+<br>
 <p>
   <strong>Time Complexity.</strong> Orbit discovery is the primary computational cost of GOttack. 
   The time complexity for computing all orbits for all nodes is 
@@ -289,7 +290,7 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
   to enumerate all five-node graphlets, and <em>d</em> denotes the maximum degree in the graph. 
   For instance, orbit discovery on the CORA dataset takes only <strong>0.17 seconds</strong>.
 </p>
-
+<br>
 <figure>
     <img src="figs/time.png" alt="Motif" style="width: 70%;">
     <figcaption> Table 3. Time Experiment Results in Seconds (↓).</figcaption>
@@ -310,7 +311,7 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
     <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #333;">
 @article{zulfikar2025gottack,
 title={GOttack: Universal Adversarial Attacks on Graph Neural Networks via Graph Orbits Learning},
-author={Zulfikar Alom and Tran Gia Bao Ngo and Murat Kantarcioglu and Cuneyt Gurcan Akcora},
+author={Zulfikar Alom, Tran Gia Bao Ngo, Murat Kantarcioglu, Cuneyt Gurcan Akcora},
 journal={The Thirteenth International Conference on Learning Representations, ICLR},
 year={2025}
 }
