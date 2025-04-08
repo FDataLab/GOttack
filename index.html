@@ -194,14 +194,14 @@ In total, the 30 distinct graphlets generate \(\mathbf{73}\) <strong>distinct or
 <p><strong>Graph Orbit Vector.</strong> A numerical representation of a node’s participation across the 73 orbits in a graph.  Consequently, \(GOV_v\) a node v is an n=73-dimensional vector, where each dimension corresponds to the count of a specific orbit touched by node v. This dimensionality reflects the full set of topological positions a node can occupy across all 5-node graphlets, making it a comprehensive description of a node’s structural embedding. </p> 
 
 
-<div style="display: flex; justify-content: center; gap: 10px; align-items: flex-start;">
+<div style="display: flex; justify-content: center; gap: 1px; align-items: flex-start;">
     
     <figure style="text-align: center; width: 15%;">
         <img src="figs/motif.png" alt="Motif" style="width: 100%;">
         <figcaption>Figure 1. A toy graph where shared node colors imply similar orbit counts. Nodes u, z, and w have 15 and 18 orbits, respectively.</figcaption>
     </figure>
 
-    <figure style="text-align: center; width: 15%;">
+    <figure style="text-align: center; width: 12%;">
         <img src="figs/glet.png" alt="Glet" style="width: 100%;">
         <figcaption>Figure 2. Graphlets where orbits 15 and 18 are defined.</figcaption>
     </figure>
@@ -261,24 +261,52 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
     <p>We apply orbit discovery to the Bitcoin, Litecoin, and Ethereum blockchains. As ground truth address labels are predominantly available for the Bitcoin network, we primarily focus on the Bitcoin transaction network and detail our findings in this section. Results for Ethereum and Litecoin are also discussed in the appendices.</p>
 
     
-<div style="display: flex; justify-content: center; gap: 10px; align-items: flex-start;">
+	<figure>
+    <img src="figs/attack_res.png" alt="Motif" style="width: 30%;">
+    <figcaption> Table 1. Misclassification rate (in %) (↑) of target nodes in five datasets where three backbone GNNs are attacked in node classification with budget ∆ = 1.
+</figcaption>
+</figure>
+	
+	
+	
+<div style="display: flex; justify-content: center; gap: 1px; align-items: flex-start;">
     
-    <figure style="text-align: center; width: 15%;">
+    <figure style="text-align: center; width: 20%;">
         <img src="figs/GraphSAGE.png" alt="GraphSAGE" style="width: 100%;">
         <figcaption> GraphSAGE Model</figcaption>
     </figure>
 
-    <figure style="text-align: center; width: 15%;">
+    <figure style="text-align: center; width: 20%;">
         <img src="figs/GCN.png" alt="GCN" style="width: 100%;">
         <figcaption>GCN Model</figcaption>
     </figure>
 	
-	    <figure style="text-align: center; width: 15%;">
+	    <figure style="text-align: center; width: 20%;">
         <img src="figs/GIN.png" alt="GIN" style="width: 100%;">
         <figcaption>GIN Model</figcaption>
     </figure>
 
 </div>	
+	
+	
+	<figure>
+    <img src="figs/dif_res.png" alt="Motif" style="width: 30%;">
+    <figcaption> Table 2. Misclassification rate (in %) (↑) of target nodes in different datasets against four defense models are attacked in node classification.
+
+</figcaption>
+</figure>	
+	
+	<div style="display: flex; justify-content: center; gap: 1px; align-items: flex-start;">
+    
+    <figure style="text-align: center; width: 15%;">
+        <img src="figs/GNN1.png" alt="Motif" style="width: 100%;">
+    </figure>
+
+    <figure style="text-align: center; width: 15%;">
+        <img src="figs/GNN2.png" alt="Glet" style="width: 100%;">
+    </figure>
+
+</div>
 	
 	
 	
