@@ -243,16 +243,7 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
 \), where order does not matter. </p>
 
 
- 
-
-    <figure>
-        <img src="figs/fig3.png" alt="Active and Passive Orbits Example" style="width: 90%;">
-        <figcaption>Sample active and passive orbit addresses in 2-chainlets. Active orbits (striped) show addresses initiating transactions, while passive orbits (checkered) only receive coins.</figcaption>
-    </figure>
-
-    <p>The distinction between active and passive orbits is significant for analyzing specific behaviors within the transaction graph. Active orbits help train classifiers to identify spending patterns, such as paying for ransom, as they reflect behavior initiated by the address owner. Conversely, passive orbits are useful for examining receiving behaviors.</p>
-
-        <h2>Experimental Setup</h2>
+<h2>Experimental Setup</h2>
     <p><strong>Datasets.</strong> We use three citation networks Cora, Citeseer, Pubmed and two blogs data Polblogs and BlogCatalog. </p>
 	    <p><strong>Models.</strong> We use four SOTA models (Nettack, FGA, SGA and PRBCD) and three backbone GNNs (GCN, GIN and GraphSAGE) to evaluate adversarial attacks.</p>
   <p><strong>Hardware.</strong> The experiments were conducted using Python (Version 3.8.19) and PyTorch  Version 3.10.0. The computational environment was a Linux cluster equipped with an AMD Ryzen Threadripper 3960X 24-core processor, 2520GB RAM and NVIDIA RTX A6000 with 49GB RAM GPUs</p>
@@ -290,6 +281,14 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
 </figcaption>
 </figure>
 
+<p>
+  <strong>Time Complexity.</strong> Orbit discovery is the primary computational cost of GOttack. 
+  The time complexity for computing all orbits for all nodes is 
+  <span style="white-space: nowrap;">O(|E| × d + |V| × d<sup>4</sup>)</span>, 
+  where <span style="white-space: nowrap;">O(|V| × d<sup>4</sup>)</span> corresponds to the time required 
+  to enumerate all five-node graphlets, and <em>d</em> denotes the maximum degree in the graph. 
+  For instance, orbit discovery on the CORA dataset takes only <strong>0.17 seconds</strong>.
+</p>
 	
 	
     <h2>Conclusion</h2>
