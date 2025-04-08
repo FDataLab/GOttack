@@ -258,9 +258,9 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
   <p><strong>Hardware.</strong> The experiments were conducted using Python (Version 3.8.19) and PyTorch  Version 3.10.0. The computational environment was a Linux cluster equipped with an AMD Ryzen Threadripper 3960X 24-core processor, 2520GB RAM and NVIDIA RTX A6000 with 49GB RAM GPUs</p>
 
         <h2>Experimental Results</h2>
-    <p>We apply orbit discovery to the Bitcoin, Litecoin, and Ethereum blockchains. As ground truth address labels are predominantly available for the Bitcoin network, we primarily focus on the Bitcoin transaction network and detail our findings in this section. Results for Ethereum and Litecoin are also discussed in the appendices.</p>
-
-    
+		
+		<p> Table 1 shows the misclassification rate achieved with a single edge perturbation (addition or deletion). GOttack yields the highest misclassification rates in 7 out of 15 attack settings and ranks second in 5 other settings. SGAttack yields  4 best attacks, while PRBCD and Nettack each perform best in  2 attack settings. PRBCD, a widely used method adopted by PyTorch, yields surprisingly low rates in two datasets for GSAGE and GIN. GOttack yields the highest overall rate of 52.08, whereas the second best Nettack yields 47.02. </p>
+  
 	<figure>
     <img src="figs/attack_res.png" alt="Motif" style="width: 70%;">
     <figcaption> Table 1. Misclassification rate (in %) (↑) of target nodes in five datasets where three backbone GNNs are attacked in node classification with budget ∆ = 1.
@@ -288,11 +288,16 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
 
 </div>	
 	
+<p> In Figure 3, we gradually increase the attack budget and represent the corresponding misclassification rates on the Citeseer dataset. We observe that for GraphSAGE, GOttack yields better misclassification results, reaching a maximum misclassification score of 97% with 5 perturbations. Similarly, for the GCN and GIN models, the proposed approach attains misclassification scores of 77% and 76%, respectively, outperforming the SOTA models.	</p>
+	
 	
 	<figure>
     <img src="figs/dif_res.png" alt="Motif" style="width: 70%;">
     <figcaption> Table 2. Misclassification rate (in %) (↑) of target nodes in different datasets against four defense models are attacked in node classification.</figcaption>
-</figure>	
+</figure>
+
+<p> Table 2 shows the misclassification rates of the top-3 attack models on defense models with a single edge perturbation. GOttack yields the highest misclassification rates in 7 out of 16 attack settings and ranks second in 7 other settings, while SGA achieves the best performance in 7 attack settings. GOttack achieves the highest overall rate of 33.07, whereas SGA has a rate of 32.5.  </p>
+	
 	
 	<div style="display: flex; justify-content: center; gap: 1px; align-items: flex-start;">
     
@@ -309,7 +314,7 @@ Orb^v = Orb_{\text{max}} \Vert Orb_{\text{sec}}
 	
 	
     <h2>Conclusion</h2>
-	 <p>We have identified a key equivalence group for graph nodes based on their topological positions within the graph and demonstrated that gradient-based attack models frequently target this group in their attacks. Our approach, GOttack, introduces a seminal topological strategy in adversarial graph machine learning. By uncovering this previously unexplored vulnerability tied to graph topology, our work highlights the susceptibility of graph neural networks to topology-based attacks and paves the way for developing efficient attack models. GOttack not only enhances misclassification rates but does so in a scalable manner.  For future work, we aim to study topological defenses against attack models.</p>
+	 <p> We have identified a key equivalence group for graph nodes based on their topological positions within the graph and demonstrated that gradient-based attack models frequently target this group in their attacks. Our approach, GOttack, introduces a seminal topological strategy in adversarial graph machine learning. By uncovering this previously unexplored vulnerability tied to graph topology, our work highlights the susceptibility of graph neural networks to topology-based attacks and paves the way for developing efficient attack models. GOttack not only enhances misclassification rates but does so in a scalable manner.  For future work, we aim to study topological defenses against attack models.</p>
     <br>
 
     <p>For additional details and experimental results, please refer to our main paper. Thank you!</p>
